@@ -1,0 +1,227 @@
+@font-face { font-family: Modernist; src: url("../fonts/Sk-Modernist-Regular.otf"); }
+@font-face { font-family: OpenSans; src: url("../fonts/OpenSans-Light.ttf"); }
+body, html {
+	width: 100%;
+	margin: 0;
+}
+* {
+	font-family: Modernist;
+	color: #759daf;
+}
+select {
+	z-index: 99;
+}
+#container-plants {
+	margin-bottom: 70px;
+}
+.plant-bar {
+	box-sizing: border-box;
+	width: 100%;
+	height: 150px;
+	margin: 8px auto;
+	overflow: hidden;
+	background: white;
+	box-shadow: 0px 1px 4px rgba(117,157,175, 0.5);
+}
+.plant-bar .icon {
+	display: inline-block;
+	float: left;
+	width: 72px;
+}
+.plant-bar .icon img {
+	max-width: 100%;
+	height: auto;
+}
+.plant-bar .description {
+	box-sizing: border-box;
+	display: inline-block;
+	width: calc(100% - 72px);
+	height: 100%;
+	float: right;
+	background: white;
+	position: relative;
+	border-left: 1px solid #759daf;
+}
+
+.plant-bar .description h3 {
+	box-sizing: border-box;
+	font-size: 23px;
+	line-height: 30px;
+	height: 32px;
+	margin: 10px 0 0 10px;
+	border-bottom: 1px solid #759daf;
+	font-weight: 100;
+}
+
+.plant-bar .description .likes {
+	margin: 6px 0 0 10px;
+}
+
+.plant-bar .description .desc {
+	margin: 2px 10px 10px 10px;
+	position: absolute;
+	bottom: 0;
+	font-size: 15px;
+	line-height: 20px;
+	font-family: OpenSans;
+}
+
+.chemical {
+	background: transparent;
+	display: inline-block;
+	line-height: 38px;
+	text-align: center;
+	width: 38px;
+	height: 38px;
+	border-radius: 38px;
+	border: 1px solid #759daf;
+	margin-right: 6px;
+	font-size: 14px;
+}
+
+.so4{
+	border-color: yellow;
+}
+
+.co2 {
+	border-color: darkgray;
+}
+
+.o3 {
+	border-color: royalblue;
+}
+.toluen {
+	border-color: #aadada;
+}
+.beznen {
+	border-color: rgb(130, 80, 210);
+}
+.amoniak {
+	border-color: rgb(210, 80, 80);
+}
+.formaldehyd {
+	border-color: rgb(180, 100, 80);
+
+}
+.ksylen {
+	border-color: rgb(80, 100, 134);
+}
+.cl3 {
+	border-color: #8acada;
+}
+
+.long {
+	width: 54px;
+}
+
+.find-bar {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background: white;
+	text-align: center;
+}
+
+.find-bar .top {
+	color: white;
+	height: 62px;
+	background: #759daf;
+	line-height: 62px;
+	font-size: 16px;
+	text-align: center;
+	box-shadow: 0px 3px 5px rgba(127, 127, 127, 0.5);
+	margin-bottom: 8px;
+}
+
+.find-bar .top i {
+	color: white;
+}
+
+.opening {
+	animation: 0.5s opening;
+}
+
+.open {
+	top: 62px;
+}
+
+.closing {
+	animation: 0.5s closing;
+}
+
+.closed {
+	top: calc(100% - 62px);;
+}
+
+@keyframes opening {
+	from { top: calc(100% - 62px); }
+	to   { top: 62px; }
+}
+
+@keyframes closing {
+	from { top: 62px; }
+	to   { top: calc(100% - 62px); }
+}
+
+form {
+	display: block;
+	padding: 16px;
+	width: 50%;
+	margin: 0 auto;
+}
+
+form label {
+	display: block;
+	margin-bottom: 4px;
+	text-align: left;
+}
+
+form select {
+	display: block;
+	height: 60px;
+	width: 100%;
+	margin-bottom: 18px;
+	font-size: 20px;
+	font-family: OpenSans;
+	background: white;
+	border: 1px solid #759daf;
+	outline: none;
+}
+
+form select:active {
+	outline: none;
+}
+
+form select:focus {
+	outline: none;
+}
+
+form select:valid {
+	outline: none;
+}
+
+form select:invalid {
+	outline: none;
+}
+
+button[type=submit] {
+	width: 100%;
+	height: 60px;
+	background: #759daf;
+	color: white;
+	border-radius: 0;
+	border: 0;
+	font-size: 16px;
+	box-shadow: 0px 2px 3px rgba(127, 127, 127, 0.5);
+}
+
+div > .sources{
+	width: 100%;
+	text-align: right;
+	float: right;
+}
+.sources {
+	float: right;
+	font-size: 9px;
+	margin-right: 10px;
+}

@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf8">
+		<link rel="stylesheet" href="res/css/plant-index.css">
+		<link rel="stylesheet" href="res/font-awesome-4.7.0/css/font-awesome.min.css">
+		<script type="text/javascript">
+			var searchState = 'closed';
+			function toggleSearch()
+			{
+				var panel = document.getElementById('search-panel');
+				if(searchState == 'closed') {
+					searchState = 'animating';
+					panel.className += ' opening';
+
+					setTimeout(function() { panel.className = 'find-bar open'; searchState = 'opened'; }, 500);
+				}
+				if(searchState == 'opened') {
+					searchState = 'animating';
+					panel.className += ' closing';
+
+					setTimeout(function() { panel.className = 'find-bar closed'; searchState = 'closed'; }, 500);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="container-plants">
+			<a href="plants/dracena.html">
+				<div class="plant-bar">
+					<div class="icon">
+						<img alt="Dracena" src="res/img/dracena.png" width="100" height="100" />
+					</div>
+					<div class="description">
+						<h3>Dracena</h3>
+						<p class="likes"><span class="chemical toluen long">toluen</span><span class="chemical co">CO</span><span class="chemical benzen long">benzen</span><span class="chemical formaldehyd long">CH<sub>2</sub>O</span></p>
+						<p class="desc">Łatwa w uprawie, szybko się regeneruje</p>
+					</div>
+				</div>
+			</a>
+			<a href="plants/bluszcz.html">
+				<div class="plant-bar">
+					<div class="icon">
+						<img alt="Bluszcz" src="res/img/bluszcz.png" width="100" height="100" />
+					</div>
+					<div class="description">
+						<h3>Bluszcz</h3>
+						<p class="likes"><span class="chemical ksylen long">ksylen</span><span class="chemical cl3 long">C<sub>2</sub>HCl<sub>3</sub></span><span class="chemical benzen long">benzen</span><span class="chemical formaldehyd long">CH<sub>2</sub>O</span></p>
+						<p class="desc">Ciepłolubna, dobrze znosi nieczęste podlewanie</p>
+					</div>
+				</div>
+			</a>
+			<a href="plants/wezownica.html">
+				<div class="plant-bar">
+					<div class="icon">
+						<img alt="Wężownica" src="res/img/wezownica.png" width="100" height="100" />
+					</div>
+					<div class="description">
+						<h3>Wężownica</h3>
+						<p class="likes"><span class="chemical benzen long">benzen</span><span class="chemical formaldehyd long">CH<sub>2</sub>O</span></p>
+						<p class="desc">Łatwa w pielęgnacji i rozmnażaniu, bardzo efektowny wygląd</p>
+					</div>
+				</div>
+			</a>
+			<a href="plants/aglaonema.html">
+				<div class="plant-bar">
+					<div class="icon">
+						<img alt="Aglanoema" src="res/img/aglaonema.png" width="100" height="100" />
+					</div>
+					<div class="description">
+						<h3>Aglanoema</h3>
+						<p class="likes"><span class="chemical top long">toluen</span><span class="chemical amoniak">NH<sub>3</sub></span><span class="chemical benzen long">benzen</span></p>
+						<p class="desc">Lubi światło, ciepło i wilgoć, bardziej wymagająca</p>
+					</div>
+				</div>
+			</a>
+			<a href="plants/filodendron.html">
+				<div class="plant-bar">
+					<div class="icon">
+						<img alt="Filodendron" src="res/img/filodendron.png" width="100" height="100" />
+					</div>
+					<div class="description">
+						<h3>Filodendron</h3>
+						<p class="likes"><span class="chemical amoniak">NH<sub>3</sub></span><span class="chemical benzen long">benzen</span><span class="chemical formaldehyd long">CH<sub>2</sub>O</span></p>
+						<p class="desc">Lubi półcień, umiarkowane podlewanie i temperaturę pokojową</p>
+					</div>
+				</div>
+			</a>
+			<a href="plants/figowiec.html">
+				<div class="plant-bar">
+					<div class="icon">
+						<img alt="Figowiec Benjamina" src="res/img/figowiec.png" width="100" height="100" />
+					</div>
+					<div class="description">
+						<h3>Figowiec Benjamina</h3>
+						<p class="likes"><span class="chemical amoniak">NH<sub>3</sub></span><span class="chemical benzen long">benzen</span><span class="chemical formaldehyd long">CH<sub>2</sub>O</span></p>
+						<p class="desc">Dobrze znosi słabe oświetlenie, ale jest podatny na szkodniki</p>
+					</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="find-bar closed" id="search-panel">
+			<div class="top"  onclick="toggleSearch()">
+				Znajdź roślinkę dla Siebie <i class="fa fa-search" aria-hidden="true"></i>
+			</div>
+			<form action="gps.php">
+				<button type="submit">Użyj GPS</button>
+			</form>
+			<div>albo</div>
+			<form action="station.php">
+				<label for="city">Wybierz miasto</label>
+				<select name="city" id="city">
+					<option value="krakow">Kraków</option>
+					<option value="warszawa">Warszawa</option>
+					<option value="opoczno">Opoczno</option>
+					<option value="gdansk">Gdańsk</option>
+					<option value="lublin">Lublin</option>
+					<option value="tanrow">Tarnów</option>
+					<option value="katowice">Katowice</option>
+					<option value="wroclaw">Wrocław</option>
+				</select>
+				<label for="station">Wybierz stację</label>
+				<select name="station">
+					<option value="dietla" selected>ul. Dietla</option>
+					<option value="krasinskiego">al. Krasińskiego</option>
+					<option value="telimeny">ul. Telimeny</option>
+					<option value="zloty-rog">Złoty Róg</option>
+					<option value="bujaka">ul. Bujaka</option>
+					<option value="bulwarowa">ul. Bulwarowa</option>
+					<option value="piastow">os. Piastów</option>
+				</select>
+				<button type="submit">Szukaj</button>
+			</form>
+			<span class="sources">Dane GIOS</span>
+		</div>
+
+	</body>
+</html>
